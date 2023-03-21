@@ -1,0 +1,31 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/test
+    #    url: jdbc:h2:mem:test
+    username: junhwa
+    password: 1234
+    driver-class-name: org.h2.Driver
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    #      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+
+  profiles:
+    include: API-KEY
+
+logging.level:
+  org.hibernate.SQL: debug
+
+springdoc:
+  swagger-ui:
+    operations-sorter: method
